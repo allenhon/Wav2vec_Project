@@ -1,1 +1,1 @@
-
+I've only uploaded a small portion of wav-files here for testing and referencing. I sampled the dataset such that I have 196 audio files in my local storage, and assume that it is representative of the data.
