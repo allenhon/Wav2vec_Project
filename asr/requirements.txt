@@ -29,7 +29,7 @@ fonttools==4.55.3
 frozenlist==1.5.0
 fsspec==2024.9.0
 h11==0.14.0
-huggingface-hub==0.27.0
+huggingface-hub==0.25.0
 idna==3.10
 importlib_metadata==8.5.0
 importlib_resources==6.4.5
