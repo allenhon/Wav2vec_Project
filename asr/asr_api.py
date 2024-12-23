@@ -24,49 +24,6 @@ def ping():
     return {"message": "pong"}
 
 # # Endpoint 2: ASR API for audio transcription
-# @app.post("/asr")
-# async def asr_endpoint(file: UploadFile = File(...)):
-#     try:
-#         # Save uploaded file temporarily
-#         temp_filename = f"temp_{file.filename}"
-#         with open(temp_filename, "wb") as temp_file:
-#             temp_file.write(await file.read())
-#             print ("File Read successfully")
-        
-#         # Convert audio to 16kHz mono
-#         audio = AudioSegment.from_file(temp_filename)
-#         audio = audio.set_frame_rate(16000).set_channels(1)
-#         audio.export(temp_filename, format="wav")
-
-#         print ("Audio converted")
-        
-#         # Load audio data
-#         waveform = torch.tensor(audio.get_array_of_samples()).unsqueeze(0)
-
-#         # Run ASR model
-#         inputs = processor(waveform, sampling_rate=16000, return_tensors="pt", padding=True)
-#         with torch.no_grad():
-#             logits = model(inputs.input_values).logits
-
-#         predicted_ids = torch.argmax(logits, dim=-1)
-#         transcription = processor.batch_decode(predicted_ids)[0]
-
-#         # Get duration of the audio
-#         duration = len(audio) / 1000.0  # duration in seconds
-        
-#         # Clean up temporary file
-#         os.remove(temp_filename)
-
-#         return JSONResponse(content={
-#             "transcription": transcription,
-#             "duration": f"{duration:.2f}"
-#         })
-    
-#     except Exception as e:
-#         return JSONResponse(content={"error": str(e)}, status_code=500)
-
-# Endpoint 2: ASR API for audio transcription
-# Endpoint 2: ASR API for audio transcription
 @app.post("/asr")
 async def asr_endpoint(file: UploadFile = File(...)):
     try:
